@@ -25,7 +25,7 @@ const double _yearPickerRowHeight = 52.0;
 const double _yearPickerRowSpacing = 8.0;
 
 const double _subHeaderHeight = 52.0;
-const double _monthNavButtonsWidth = 108.0;
+const double _monthNavButtonsWidth = 120.0;
 
 T? _ambiguate<T>(T? value) => value;
 
@@ -432,7 +432,7 @@ class _DatePickerModeToggleButtonState
           if (widget.mode == DatePickerMode.day &&
               widget.config.centerAlignModePicker == true)
             // Give space for the prev/next month buttons that are underneath this row
-            SizedBox(width: datePickerOffsetPadding),
+            const SizedBox(width: 16),
           Flexible(
             child: Semantics(
               label: MaterialLocalizations.of(context).selectYearSemanticsLabel,
@@ -815,7 +815,7 @@ class _MonthPickerState extends State<_MonthPicker> {
             height: (widget.config.controlsHeight ?? _subHeaderHeight),
             child: Row(
               children: <Widget>[
-                // if (widget.config.centerAlignModePicker != true) const Spacer(),
+                if (widget.config.centerAlignModePicker != true) const Spacer(),
                 IconButton(
                   icon: widget.config.lastMonthIcon ??
                       const Icon(Icons.chevron_left),
@@ -826,7 +826,7 @@ class _MonthPickerState extends State<_MonthPicker> {
                   onPressed:
                       _isDisplayingFirstMonth ? null : _handlePreviousMonth,
                 ),
-                // if (widget.config.centerAlignModePicker == true) const Spacer(),
+                if (widget.config.centerAlignModePicker == true) const Spacer(),
                 IconButton(
                   icon: widget.config.nextMonthIcon ??
                       const Icon(Icons.chevron_right),
