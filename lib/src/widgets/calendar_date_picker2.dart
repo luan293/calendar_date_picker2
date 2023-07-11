@@ -25,7 +25,7 @@ const double _yearPickerRowHeight = 52.0;
 const double _yearPickerRowSpacing = 8.0;
 
 const double _subHeaderHeight = 52.0;
-const double _monthNavButtonsWidth = 120.0;
+const double _monthNavButtonsWidth = 140.0;
 
 T? _ambiguate<T>(T? value) => value;
 
@@ -432,7 +432,7 @@ class _DatePickerModeToggleButtonState
           if (widget.mode == DatePickerMode.day &&
               widget.config.centerAlignModePicker == true)
             // Give space for the prev/next month buttons that are underneath this row
-            const SizedBox(width: 16),
+            SizedBox(width: datePickerOffsetPadding),
           Flexible(
             child: Semantics(
               label: MaterialLocalizations.of(context).selectYearSemanticsLabel,
