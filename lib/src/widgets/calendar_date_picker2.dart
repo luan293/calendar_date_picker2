@@ -455,6 +455,7 @@ class _DatePickerModeToggleButtonState
                       children: <Widget>[
                         Flexible(
                           child: RichText(
+                            overflow: TextOverflow.ellipsis,
                             text: TextSpan(
                               text: widget.titleMonth,
                               style: const TextStyle(
